@@ -1,0 +1,29 @@
+Java String class provides several built-in methods that you can use to manipulate and work with strings. Here are some commonly used methods of the String class:
+
+length(): Returns the length of the string.
+charAt(int index): Returns the character at the specified index.
+substring(int beginIndex): Returns a new string that is a substring of the original string, starting from the specified index.
+substring(int beginIndex, int endIndex): Returns a new string that is a substring of the original string, starting from the beginIndex and ending at the endIndex-1.
+concat(String str): Concatenates the specified string to the end of the original string.
+toLowerCase(): Converts the string to lowercase.
+toUpperCase(): Converts the string to uppercase.
+trim(): Removes leading and trailing whitespace from the string.
+startsWith(String prefix): Checks if the string starts with the specified prefix.
+endsWith(String suffix): Checks if the string ends with the specified suffix.
+contains(CharSequence sequence): Checks if the string contains the specified sequence of characters.
+indexOf(String str): Returns the index of the first occurrence of the specified string within the original string.
+lastIndexOf(String str): Returns the index of the last occurrence of the specified string within the original string.
+replace(CharSequence target, CharSequence replacement): Replaces all occurrences of the target sequence with the replacement sequence.
+split(String regex): Splits the string into an array of substrings based on the specified regular expression.
+equals(Object obj): Compares the string with the specified object for equality.
+equalsIgnoreCase(String anotherString): Compares the string to another string, ignoring case.
+startsWith(String prefix, int toffset): Checks if the substring starting at the specified offset starts with the given prefix.
+endsWith(String suffix): Checks if the substring ending at the specified offset ends with the given suffix.
+valueOf(dataType value): Converts different data types to strings.
+These are just a few of the methods available in the String class. The String class offers many more methods for various string manipulation and comparison operations. You can refer to the official Java documentation for a comprehensive list of methods available in the String class.
+
+
+
+
+
+
