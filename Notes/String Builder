@@ -1,0 +1,17 @@
+The StringBuilder class in Java provides several built-in methods for manipulating and working with mutable strings. Here are some commonly used methods of the StringBuilder class:
+
+append(...): Appends the specified argument to the end of the string.
+insert(int offset, ...): Inserts the specified argument at the specified position.
+delete(int start, int end): Deletes the characters from the specified start index (inclusive) to the end index (exclusive).
+deleteCharAt(int index): Deletes the character at the specified index.
+replace(int start, int end, String str): Replaces the characters from the specified start index (inclusive) to the end index (exclusive) with the specified string.
+substring(int start): Returns a new StringBuilder that is a substring of the original StringBuilder, starting from the specified index.
+substring(int start, int end): Returns a new StringBuilder that is a substring of the original StringBuilder, starting from the start index and ending at the end index-1.
+reverse(): Reverses the characters in the StringBuilder.
+length(): Returns the number of characters in the StringBuilder.
+charAt(int index): Returns the character at the specified index.
+setCharAt(int index, char ch): Sets the character at the specified index to the specified character.
+indexOf(String str): Returns the index of the first occurrence of the specified string within the StringBuilder.
+lastIndexOf(String str): Returns the index of the last occurrence of the specified string within the StringBuilder.
+toString(): Converts the StringBuilder to a String.
+These are just a few examples of the methods available in the StringBuilder class. The class provides many more methods for various string manipulation operations. You can refer to the official Java documentation for a comprehensive list of methods available in the StringBuilder class.
