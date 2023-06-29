@@ -1,0 +1,41 @@
+In Java, a HashMap is a data structure that stores key-value pairs and provides efficient lookup, insertion, and deletion operations. It is part of the Java Collections Framework and is based on the concept of hashing.
+To use a HashMap in Java, you need to import the java.util.HashMap class. Here's an example of how to create and use a HashMap:
+
+import java.util.HashMap;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Create a new HashMap
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+        // Add key-value pairs to the HashMap
+        hashMap.put("apple", 1);
+        hashMap.put("banana", 2);
+        hashMap.put("orange", 3);
+
+        // Access values by key
+        int appleValue = hashMap.get("apple");
+        System.out.println("Value of 'apple': " + appleValue);
+
+        // Update value for a key
+        hashMap.put("banana", 4);
+
+        // Remove a key-value pair
+        hashMap.remove("orange");
+
+        // Check if a key exists
+        boolean containsKey = hashMap.containsKey("apple");
+        System.out.println("Contains 'apple' key: " + containsKey);
+
+        // Iterate over the HashMap
+	     for(Map.Entry<Integer,Integer> e: hashMap.entrySet()){
+             System.out.println(e.getKey());
+             System.out.println(e.getValue());
+		  	}
+		
+
+        // Get the size of the HashMap
+        int size = hashMap.size();
+        System.out.println("Size of the HashMap: " + size);
+    }
+}
