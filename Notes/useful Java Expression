@@ -1,0 +1,26 @@
+In Java, regular expressions (regex) are represented by the java.util.regex package. Here are some commonly used regular expressions in Java:
+
+. (dot): Matches any single character except a newline character.
+*: Matches zero or more occurrences of the preceding character or group.
++: Matches one or more occurrences of the preceding character or group.
+?: Matches zero or one occurrence of the preceding character or group.
+\d: Matches any digit (0-9).
+\w: Matches any word character (a-z, A-Z, 0-9, or underscore).
+\s: Matches any whitespace character (space, tab, newline, etc.).
+[]: Matches any single character within the specified range or set.
+Example: [abc] matches either a, b, or c.
+Example: [0-9] matches any digit.
+[^]: Matches any single character not in the specified range or set.
+Example: [^abc] matches any character except a, b, or c.
+Example: [^0-9] matches any non-digit character.
+|: Matches either the expression before or after the pipe symbol.
+Example: apple|orange matches either "apple" or "orange".
+^: Matches the beginning of a line.
+$: Matches the end of a line.
+\b: Matches a word boundary.
+Example: \bhello\b matches the word "hello" but not "hello123".
+(): Groups multiple characters or expressions together.
+Example: (abc)+ matches one or more occurrences of "abc".
+(?i): Enables case-insensitive matching.
+Example: (?i)hello matches "hello", "Hello", "HELLO", etc.
+These are just a few examples of regular expressions in Java. Regular expressions provide a powerful way to match and manipulate text patterns. You can combine these expressions to create more complex matching patterns to suit your requirements.
