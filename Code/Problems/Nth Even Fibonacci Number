@@ -1,0 +1,25 @@
+import java.util.*;
+import static java.lang.Math.ceil;
+
+public class Main {
+	static long NthEvenFibonacci(long n) {
+        if(n==1)
+			return 2;
+		int m=1000000007;
+		long prev=0;
+		long current=2;
+		long next=0;
+		for(int i=2;i<=n;i++)
+			{
+				next=4*current+prev;
+				prev=current;
+				current=next;
+			}
+		return current%m;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long n = sc.nextLong();
+        System.out.println(NthEvenFibonacci(n));
+    }
+}
