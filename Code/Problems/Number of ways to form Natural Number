@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static long noOfWays(int n, int start, long count){
+		if(n==0){
+			count++;
+			return count;
+		}
+		for(int i=start ;i<=n;i++){
+
+     	count=noOfWays(n-i,i+1,count);
+			
+	    }
+		return count;
+	}
+	
+    public static long ways(int n, int i){
+          return noOfWays(n,i,0);
+    }
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.println(ways(n, 1));
+    }
+}
