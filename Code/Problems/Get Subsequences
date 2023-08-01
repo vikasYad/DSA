@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static ArrayList<String> generateSubsequences(String str)
+    {
+		ArrayList<String> ans= new ArrayList<>();
+		ArrayList<String> finalAns= new ArrayList<>();
+		String comb="";
+        finalAns= generateSubs(0,str,comb,ans); 
+		Collections.sort(finalAns);
+		finalAns.remove(0);
+		return finalAns;
+    }
+	public static ArrayList<String> generateSubs(int index, String str, String comb, ArrayList<String> ans){
+		if(index==str.length()){
+			ans.add(comb);
+			return ans;
+		}
+		generateSubs(index+1,str,comb,ans);
+		comb=comb+str.charAt(index);
+		return generateSubs(index+1,str,comb,ans);
+	}
+	
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s;
+        s = sc.nextLine();
+        ArrayList<String> res = generateSubsequences(s);
+        for(int i=0;i<res.size();i++){
+            System.out.println(res.get(i));
+        }
+    }
+}
