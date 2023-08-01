@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        ArrayList<String> paths = getStairPaths(n);
+        System.out.println(paths);
+    }
+
+    public static ArrayList<String> getStairPaths(int n) {
+		ArrayList<String> ans= new ArrayList<>();
+        return stairPaths(n,"",ans);
+    }
+	public static ArrayList<String> stairPaths(int n, String comb, ArrayList<String> ans){
+		if(n==0){
+			ans.add(comb);
+			return ans;
+		}
+		if(n-1>=0)
+		ans=stairPaths(n-1,comb+"1",ans);
+		if(n-2>=0)
+		ans=stairPaths(n-2,comb+"2",ans);
+		if(n-3>=0)
+		ans=stairPaths(n-3,comb+"3",ans);
+		return ans;
+	}
+}
+
+
+                        
+                                
