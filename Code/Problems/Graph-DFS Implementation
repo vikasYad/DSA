@@ -1,0 +1,52 @@
+import java.util.*;
+
+class Solution {
+	public static void DFS(ArrayList<ArrayList<Integer>> graph, boolean [] trav, int node){
+
+		trav[node]=true;
+		
+		System.out.print(node+" ");
+		
+		for(int adj: graph.get(node)){
+			if(trav[adj]!=true)
+			{
+				DFS(graph,trav,adj);
+			}
+		}
+	} 
+    public static void DFSTraversal(List<List<Integer>> edges, int n) {
+
+	ArrayList<ArrayList<Integer>> graph= new ArrayList<>();
+	for(int i=0;i<n;i++){
+		graph.add(new ArrayList<>());
+	}
+	for(List<Integer> edge: edges){
+		int u=edge.get(0);
+		int v=edge.get(1);
+		graph.get(u).add(v);
+		graph.get(v).add(u);
+	}	
+    boolean[] trav= new boolean[n];
+		for(int i=0;i<n;i++)
+			Collections.sort(graph.get(i));
+		DFS(graph, trav,0);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int e = sc.nextInt();
+        List<List<Integer>> ed = new ArrayList<>();
+        for (int i = 0; i < e; i++) {
+            List<Integer> l = new ArrayList<>();
+            l.add(sc.nextInt());
+            l.add(sc.nextInt());
+            ed.add(l);
+        }
+
+        Solution ob = new Solution();
+        ob.DFSTraversal(ed, n);
+    }
+}
