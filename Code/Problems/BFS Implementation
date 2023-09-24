@@ -1,0 +1,57 @@
+import java.util.*;
+import java.io.*;
+ 
+class Graph {
+    public int vertices;
+    public ArrayList<Integer>[] adjList;
+ 
+    Graph(int v) {
+        this.vertices = v+1;
+        adjList = new ArrayList[v+1];
+        
+        for (int i = 0; i <= v; i++) adjList[i] = new ArrayList<Integer>();
+    }
+ 
+    void addEdge(int v, int w) {
+        adjList[v].add(w);
+     
+    }
+ 
+    void BFS(int x) {
+        Queue<Integer> qu= new LinkedList<>();
+		boolean[] vis= new boolean[vertices];
+		qu.add(x);
+		vis[x]=true;
+		doBFS(qu,vis);
+    }
+	void doBFS( Queue<Integer> qu,boolean[] vis){
+		while(!qu.isEmpty()){
+			int node=qu.remove();
+			System.out.print(node+" ");
+			for(int i=0;i<adjList[node].size();i++){
+				int temp=adjList[node].get(i);
+				if(vis[temp]!=true){
+				  vis[temp]=true;
+				  qu.add(temp);
+				}
+			}
+			
+		}
+	}
+}
+ 
+public class Main {
+    public static void main(String args[]) {
+        
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int e = sc.nextInt();
+        Graph g = new Graph(n);
+        for(int i =0;i<e;i++){
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            g.addEdge(x,y);
+        }
+        g.BFS(0);
+    }
+}
