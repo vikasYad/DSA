@@ -1,0 +1,54 @@
+
+import java.util.*;
+import java.io.*;
+
+class Solution{
+	public static int partition(int arr[], int low, int high){
+		int pivot=arr[high];
+		int i=low-1;
+		for(int j=low;j<high;j++){
+			if(arr[j]<pivot){
+				i++;
+				//swap
+				int temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		}
+		i++;
+		//swap to place pivot at right index;
+		int temp=arr[i];
+		arr[i]=pivot;
+		arr[high]=temp;
+		return i;
+	}
+	public static void Qsort(int arr[], int low, int high){
+		if(low>=high)
+			return;
+		int pivindx=partition(arr,low,high);
+		Qsort(arr,low,pivindx-1);
+		Qsort(arr,pivindx+1,high);
+	}
+	static void quickSort(int[] arr){
+        int low=0;
+		int high=arr.length-1;
+		Qsort(arr,low,high);
+    }
+}
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+		int n;
+        n = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++)
+            arr[i] = sc.nextInt();
+        Solution Obj = new Solution();
+		Obj.quickSort(arr);
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+        sc.close();
+    }
+}
