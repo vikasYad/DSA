@@ -1,0 +1,48 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+	public static void conquer(int [] arr, int l, int mid,int r){
+		int [] newArr= new int[r-l+1];
+		int indx1=l;
+		int indx2=mid+1;
+		int indx=0;
+		while(indx1<=mid && indx2<=r){
+			if(arr[indx1]<=arr[indx2])
+				newArr[indx++]=arr[indx1++];
+			else
+				newArr[indx++]=arr[indx2++];
+		}
+		while(indx1<=mid)
+			newArr[indx++]=arr[indx1++];
+		while(indx2<=r)
+			newArr[indx++]=arr[indx2++];
+
+		for(int i=0, j=l;i<newArr.length;i++,j++){
+			arr[j]=newArr[i];
+		}
+	}
+	
+static void mergeSort(int[] arr,int l,int r){
+       if(l>=r){
+		   return;
+	   }
+	   int mid=l+(r-l)/2;
+       mergeSort(arr,l,mid);
+	   mergeSort(arr,mid+1,r);
+	   conquer(arr,l,mid,r);
+     }
+}
+public class Main {
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        int n=input.nextInt();
+        int[] a=new int[n];
+        for(int i= 0; i < n; i++)
+            a[i] = input.nextInt();
+        Solution Obj = new Solution();
+        Obj.mergeSort(a,0,n-1);
+        for (int i = 0; i < n; i++)
+            System.out.print(a[i] + " ");
+    }
+}
